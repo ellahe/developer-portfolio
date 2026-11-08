@@ -1,0 +1,94 @@
+
+<section class="projects" id="projects">
+  <div class="container projects__container">
+
+    <header class="projects__heading">
+      <span class="projects__eyebrow">
+        SELECTED WORK
+      </span>
+
+      <h2 class="projects__title">
+        Projects I've <span>Worked On.</span>
+      </h2>
+
+      <p class="projects__description">
+        A selection of software projects and integrations
+        where I've worked on solving real business problems
+        through backend and frontend development.
+      </p>
+    </header>
+
+    <div class="projects__grid">
+
+      @for (project of projects; track project.title) {
+        <article
+          class="projects__card"
+          [class.projects__card--featured]="project.featured">
+
+          <div class="projects__card-top">
+
+            <div class="projects__icon">
+              @switch (project.icon) {
+                @case ('code') {
+                  <svg lucideCode [size]="25"></svg>
+                }
+                @case ('database') {
+                  <svg lucideDatabase [size]="25"></svg>
+                }
+                @case ('globe') {
+                  <svg lucideGlobe [size]="25"></svg>
+                }
+                @case ('monitor') {
+                  <svg lucideMonitor [size]="25"></svg>
+                }
+                @case ('radio') {
+                  <svg lucideRadio [size]="25"></svg>
+                }
+                @case ('workflow') {
+                  <svg lucideWorkflow [size]="25"></svg>
+                }
+              }
+            </div>
+
+            <span class="projects__category">
+              {{ project.category }}
+            </span>
+
+          </div>
+
+          <h3 class="projects__name">
+            {{ project.title }}
+          </h3>
+
+          <p class="projects__description-text">
+            {{ project.description }}
+          </p>
+
+          <div class="projects__role">
+            <svg lucideUserRound [size]="15"></svg>
+            <span>{{ project.role }}</span>
+          </div>
+
+          <div class="projects__divider"></div>
+
+          <div class="projects__technologies">
+            @for (technology of project.technologies; track technology) {
+              <span class="projects__tag">
+                {{ technology }}
+              </span>
+            }
+          </div>
+
+        </article>
+      }
+
+    </div>
+
+    <div class="projects__footer">
+      <p>
+        Turning business requirements into practical software solutions.
+      </p>
+    </div>
+
+  </div>
+</section>

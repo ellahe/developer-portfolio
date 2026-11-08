@@ -1,0 +1,90 @@
+
+<section class="skills" id="skills">
+  <div class="container skills__container">
+
+    <header class="skills__heading">
+      <span class="skills__eyebrow">
+        FULL-STACK DEVELOPMENT
+      </span>
+
+      <h2 class="skills__title">
+        My <span>Technical Expertise.</span>
+      </h2>
+
+      <p class="skills__description">
+        Building complete web applications from robust
+        .NET backends to modern Angular frontends.
+        Focused on clean architecture, performance,
+        and great user experiences.
+      </p>
+    </header>
+
+    <div class="skills__grid">
+
+      @for (category of categories; track category.title) {
+        <article
+          class="skills__card"
+          [class.skills__card--featured]="category.featured">
+
+          <div class="skills__card-header">
+
+            <div class="skills__category-icon">
+              <svg
+                [lucideIcon]="iconMap[category.icon]"
+                [size]="24"
+                [strokeWidth]="1.8">
+              </svg>
+            </div>
+
+            @if (category.featured) {
+              <span class="skills__badge">
+                {{ category.title === 'Backend Development'
+                  ? '.NET SPECIALIZATION'
+                  : 'ANGULAR SPECIALIZATION' }}
+              </span>
+            }
+
+          </div>
+
+          <h3>{{ category.title }}</h3>
+
+          <p class="skills__card-description">
+            {{ category.description }}
+          </p>
+
+          <div class="skills__list">
+
+            @for (skill of category.skills; track skill.name) {
+              <span class="skills__item">
+
+                <span class="skills__item-icon">
+                  <svg
+                    [lucideIcon]="iconMap[skill.icon]"
+                    [size]="16"
+                    [strokeWidth]="1.8">
+                  </svg>
+                </span>
+
+                <span>{{ skill.name }}</span>
+
+              </span>
+            }
+
+          </div>
+
+        </article>
+      }
+
+    </div>
+
+    <div class="skills__footer">
+      <span class="skills__footer-dot"></span>
+
+      <p>
+        Always learning and exploring new technologies
+        to build better solutions.
+      </p>
+    </div>
+
+  </div>
+</section>

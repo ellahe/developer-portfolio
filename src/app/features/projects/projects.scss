@@ -1,0 +1,229 @@
+
+:host {
+  display: block;
+}
+
+.projects {
+  position: relative;
+  padding: 110px 0;
+  overflow: hidden;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__heading {
+    max-width: 650px;
+    margin: 0 auto 55px;
+    text-align: center;
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    margin-bottom: 16px;
+    color: var(--color-primary);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+
+  &__title {
+    margin: 0 0 18px;
+    color: var(--color-text);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+
+    span {
+      color: var(--color-primary);
+    }
+  }
+
+  &__description {
+    max-width: 570px;
+    margin: 0 auto;
+    color: var(--color-text-secondary);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 28px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    transition:
+      transform 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: var(--color-primary);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &__card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+    border-radius: 14px;
+  }
+
+  &__category {
+    padding: 7px 11px;
+    color: var(--color-primary);
+    background: var(--color-primary-soft);
+    border-radius: 30px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  &__name {
+    margin: 0 0 12px;
+    color: var(--color-text);
+    font-size: 1.25rem;
+    font-weight: 750;
+    line-height: 1.4;
+  }
+
+  &__description-text {
+    min-height: 76px;
+    margin: 0 0 20px;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+  }
+
+  &__role {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    color: var(--color-text);
+    font-size: 0.82rem;
+    font-weight: 600;
+  }
+
+  &__divider {
+    height: 1px;
+    margin: 20px 0;
+    background: var(--color-border);
+  }
+
+  &__technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__tag {
+    padding: 7px 10px;
+    color: var(--color-text-secondary);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition:
+      color 0.2s ease,
+      border-color 0.2s ease;
+
+    &:hover {
+      color: var(--color-primary);
+      border-color: var(--color-primary);
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    margin-top: 42px;
+    color: var(--color-text-secondary);
+    text-align: center;
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__footer-icon {
+    display: inline-flex;
+    color: var(--color-primary);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 80px 0;
+
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__heading {
+      margin-bottom: 38px;
+    }
+
+    &__card {
+      padding: 24px;
+    }
+
+    &__description-text {
+      min-height: auto;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .projects {
+    &__category {
+      font-size: 0.65rem;
+    }
+
+    &__tag {
+      font-size: 0.72rem;
+    }
+
+    &__footer {
+      align-items: flex-start;
+      text-align: left;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects__card,
+  .projects__tag {
+    transition: none;
+  }
+}

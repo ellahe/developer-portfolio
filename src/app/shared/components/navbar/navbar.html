@@ -1,0 +1,43 @@
+
+<header class="navbar">
+  <div class="container navbar__container">
+
+    <a class="navbar__brand" href="#home" (click)="closeMenu()">
+      <span class="navbar__brand-icon">E</span>
+      <span>Developer<span class="text-primary">.</span></span>
+    </a>
+
+    <button
+      class="navbar__toggle"
+      type="button"
+      aria-label="Toggle navigation"
+      [attr.aria-expanded]="menuOpen()"
+      (click)="toggleMenu()"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav
+      class="navbar__nav"
+      [class.navbar__nav--open]="menuOpen()"
+      aria-label="Main navigation"
+    >
+      <a href="#home" (click)="closeMenu()">Home</a>
+      <a href="#about" (click)="closeMenu()">About</a>
+      <a href="#skills" (click)="closeMenu()">Skills</a>
+      <a href="#projects" (click)="closeMenu()">Projects</a>
+
+      <a
+        class="navbar__contact"
+        href="#contact"
+        (click)="closeMenu()"
+      >
+        Let's Talk
+        <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+  </div>
+</header>

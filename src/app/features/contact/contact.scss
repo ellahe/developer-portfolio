@@ -69,6 +69,7 @@
 
   &__card-content {
     flex: 1;
+    min-width: 0;
 
     h3 {
       margin: 12px 0;
@@ -95,6 +96,7 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
+    max-width: 100%;
     color: var(--color-primary);
     font-weight: 600;
     text-decoration: none;
@@ -130,6 +132,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 28px;
     margin-top: 45px;
 
@@ -183,11 +186,6 @@
 
     &__button {
       width: 100%;
-    }
-
-    &__social {
-      flex-wrap: wrap;
-      gap: 18px;
     }
 
     &__footer {

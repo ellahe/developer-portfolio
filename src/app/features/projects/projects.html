@@ -1,4 +1,3 @@
-
 <section class="projects" id="projects">
   <div class="container projects__container">
 
@@ -21,65 +20,65 @@
     <div class="projects__grid">
 
       @for (project of projects; track project.title) {
-        <article
-          class="projects__card"
-          [class.projects__card--featured]="project.featured">
+      <article class="projects__card" [class.projects__card--featured]="project.featured">
 
-          <div class="projects__card-top">
+        <div class="projects__card-top">
 
-            <div class="projects__icon">
-              @switch (project.icon) {
-                @case ('code') {
-                  <svg lucideCode [size]="25"></svg>
-                }
-                @case ('database') {
-                  <svg lucideDatabase [size]="25"></svg>
-                }
-                @case ('globe') {
-                  <svg lucideGlobe [size]="25"></svg>
-                }
-                @case ('monitor') {
-                  <svg lucideMonitor [size]="25"></svg>
-                }
-                @case ('radio') {
-                  <svg lucideRadio [size]="25"></svg>
-                }
-                @case ('workflow') {
-                  <svg lucideWorkflow [size]="25"></svg>
-                }
-              }
-            </div>
-
-            <span class="projects__category">
-              {{ project.category }}
-            </span>
-
-          </div>
-
-          <h3 class="projects__name">
-            {{ project.title }}
-          </h3>
-
-          <p class="projects__description-text">
-            {{ project.description }}
-          </p>
-
-          <div class="projects__role">
-            <svg lucideUserRound [size]="15"></svg>
-            <span>{{ project.role }}</span>
-          </div>
-
-          <div class="projects__divider"></div>
-
-          <div class="projects__technologies">
-            @for (technology of project.technologies; track technology) {
-              <span class="projects__tag">
-                {{ technology }}
-              </span>
+          <div class="projects__icon">
+            @switch (project.icon) {
+            @case ('code') {
+            <svg lucideCode [size]="25"></svg>
+            }
+            @case ('database') {
+            <svg lucideDatabase [size]="25"></svg>
+            }
+            @case ('globe') {
+            <svg lucideGlobe [size]="25"></svg>
+            }
+            @case ('monitor') {
+            <svg lucideMonitor [size]="25"></svg>
+            }
+            @case ('radio') {
+            <svg lucideRadio [size]="25"></svg>
+            }
+            @case ('workflow') {
+            <svg lucideWorkflow [size]="25"></svg>
+            }
             }
           </div>
 
-        </article>
+          <span class="projects__category">
+            {{ project.category }}
+          </span>
+
+        </div>
+
+        <h3 class="projects__name">
+          {{ project.title }}
+        </h3>
+
+        <p class="projects__description-text">
+          {{ project.description }}
+        </p>
+
+        <div class="projects__role">
+
+          <div class="projects__role-text">
+            {{ project.role }}
+          </div>
+        </div>
+
+        <div class="projects__divider"></div>
+
+        <div class="projects__technologies">
+          @for (technology of project.technologies; track technology) {
+          <span class="projects__tag">
+            {{ technology }}
+          </span>
+          }
+        </div>
+
+      </article>
       }
 
     </div>
